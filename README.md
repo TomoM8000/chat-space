@@ -11,6 +11,16 @@
 |------|----|-------|
 |name|string|null: false, unique: true|
 
+## commentテーブル
+|Column|Type|Options|
+|------|----|-------|
+|comment|text|null: false|
+|image|text||
+
+### Association
+- belongs_to :group
+- belongs_to :user
+
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -21,14 +31,14 @@
 - belongs_to :group
 - belongs_to :user
 
-## commentテーブル
+## comments_groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-|comment|text|null: false|
-|image|text||
+|comment_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
 - belongs_to :user
+- belongs_to :comment
