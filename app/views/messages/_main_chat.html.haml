@@ -1,0 +1,26 @@
+.main
+  .main__header
+    .main__header--name
+      Group name
+      .main__header--name--member
+        Member:Katsuo
+    .main__header--right
+      Edit
+  .main__contents
+    .main__contents--content
+      .main__contents--content--upper
+        .main__contents--content--upper--name
+          カツオ
+        .main__contents--content--upper--date
+          "date"
+      .main__contents--content--text
+        "こんにちは"
+  .main__footer
+    .main__footer--form
+      .main__footer--form--input
+        .main__footer--form--input--text
+        %label{class: "main__footer--form--input--pic"}
+          = icon('fas', 'image')
+          %input{type: "file"}
+      .main__footer--form--btn
+        Send
