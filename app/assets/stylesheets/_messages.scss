@@ -6,20 +6,25 @@
   height: 100vw;
   width: 300px;
   float: left;
-    &__user {
-      height: 100px;
+  color: #ffffff;
+    .header{
       background-color: #253141;
+      height: 100px;
       display: flex;
       align-items: center;
       padding: 0 20px;
-      color: #ffffff;
-      &--items{
-        font-size: 16px;
+      &__box{
         display: flex;
         justify-content: space-between;
         width: 100%;
         font-weight: bold;
-        &--right{
+        &__name{
+          margin: 0;
+          padding: 0;
+          font-size: 16px;
+        }
+        &__lists{
+          display: flex;
           margin-left: 0.3rem;
         }
       }
@@ -30,7 +35,6 @@
       overflow: scroll;
       padding: 20px 20px 0;
       &--group{
-        color: #ffffff;
         margin-bottom: 40px;
         &--name {
           font-size: 15px;
