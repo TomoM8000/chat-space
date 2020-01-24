@@ -7,20 +7,14 @@
     .main__header--right
       Edit
   .main__contents
-    .main__contents--content
-      .main__contents--content--upper
-        .main__contents--content--upper--name
-          カツオ
-        .main__contents--content--upper--date
-          "date"
-      .main__contents--content--text
-        "こんにちは"
+    = render @messages
   .main__footer
     .main__footer--form
       .main__footer--form--input
-        .main__footer--form--input--text
-        %label{class: "main__footer--form--input--pic"}
-          = icon('fas', 'image')
-          %input{type: "file"}
-      .main__footer--form--btn
-        Send
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form--input--text', placeholder: 'type message'
+          .main__gooter--form--input__mask
+            = f.label :image, class: 'form__mask__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__submit'
