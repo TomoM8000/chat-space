@@ -25,6 +25,10 @@ class GroupsController < ApplicationController
       render :edit
     end
   end
+  
+  def show
+    @messages = Message.find(params[:group_id])
+  end
 
   private
   def group_params
