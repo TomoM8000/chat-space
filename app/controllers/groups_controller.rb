@@ -26,10 +26,6 @@ class GroupsController < ApplicationController
     end
   end
   
-  def show
-    @messages = Message.find(params[:group_id])
-  end
-
   private
   def group_params
     params.require(:group).permit(:name, user_ids: [])
