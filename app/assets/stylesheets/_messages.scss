@@ -56,15 +56,17 @@
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px #eee;
-    &--name {
-      color: #333333;
-      font-size: 20px;
-      padding-top: 35px;
-      display: block;
+    &--left {
+      margin-top: 35px;
+      &--name {
+        color: #333333;
+        font-size: 20px;
+        margin-bottom: 15px;
+        display: block;
+      }
       &--member {
         color: #999999;
         font-size: 12px;
-        margin-top: 15px;
       }
     }
     &--right {
@@ -78,38 +80,7 @@
   
     }
   }
-  &__contents {
-    height: calc(100vh - 190px);
-    width: calc(100vw - 300px);
-    padding: 35px 40px;
-    background-color: #fafafa;
-    &--content{
-      position: relative;
-      display: block;
-      padding-bottom: 46px;
-      &--upper{
-        display: flex;
-        margin-bottom: 12px;
-        &--name{
-          font-size: 16px;
-          float: left;
-          font-weight: bold;
-          color: #333333;
-        }
-        &--date{
-          float: left;
-          font-size: 12px;
-          color: #999999;
-        }
-      }
-      &--text{
-        width: 100vw;
-        font-size: 14px;
-        color: #434A54;
-      }
-    }
-  }
-  
+
   &__footer {
     height: 90px;
     padding: 20px 40px;
@@ -128,18 +99,21 @@
           background-color: #ffffff;
           line-height: 45px;
         }
-        &--pic{
+        &__mask{
+          &.icon{
           font-size: 1.3rem;
           position: absolute;
           top: 10px;
           right: 10px;
           cursor: pointer;
-          input{
-            display: none;
           }
         }
+        .hidden{
+            display: none;
+          }
+        
       }
-      &--btn{
+      &__submit{
         width: 100px;
         height: 50px;
         padding: 0 30px;
@@ -150,5 +124,38 @@
         line-height: 45px;
       }
     } 
+  }
+}
+
+.message {
+  height: calc(100vh - 190px);
+  width: calc(100vw - 300px);
+  padding: 35px 40px;
+  background-color: #fafafa;
+  .upper-message{
+    display: flex;
+    margin-bottom: 12px;
+    &__user-name{
+      font-size: 16px;
+      float: left;
+      font-weight: bold;
+      color: #333333;
+    }
+    &__date{
+      float: left;
+      font-size: 12px;
+      color: #999999;
+      margin-left: 10px;
+    }
+  }
+  .lower-message{
+    position: relative;
+    display: block;
+    padding-bottom: 46px;
+    &__content{
+      width: 100vw;
+      font-size: 14px;
+      color: #434A54;
+    }
   }
 }

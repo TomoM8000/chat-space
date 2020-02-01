@@ -1,11 +1,14 @@
 .main
   .main__header
-    %h3.main__header--name
-      = @group.name
-    %ul.main__header--member
-      member
+    .main__header--left
+      %h3.main__header--left--name
+        = @group.name
+      %ul.main__header--left--member
+        = @user.name
     .main__header--right
-      Edit
+      = link_to edit_group_path(@group) do 
+        .main__header--right--btn
+          Edit
   .main__contents
     = render @messages
   .main__footer
@@ -13,7 +16,7 @@
       .main__footer--form--input
         = form_for [@group, @message] do |f|
           = f.text_field :content, class: 'form--input--text', placeholder: 'type message'
-          .main__gooter--form--input__mask
+          .main__footer--form--input__mask
             = f.label :image, class: 'form__mask__image' do
               = icon('fas', 'image', class: 'icon')
               = f.file_field :image, class: 'hidden'
