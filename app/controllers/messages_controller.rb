@@ -1,8 +1,8 @@
 class MessagesController < ApplicationController
-  before_action :set_group, :set_message, :set_member
+  before_action :set_group, :set_message
 
   def index
-    @messages = Message.find(params[:group_id])
+    @messages = @group.messages.includes(:user)
   end
 
   def create
@@ -29,7 +29,4 @@ class MessagesController < ApplicationController
       @message = Message.new
     end
 
-    def set_member
-      @user = User.find(params[:group_id])
-    end
 end
