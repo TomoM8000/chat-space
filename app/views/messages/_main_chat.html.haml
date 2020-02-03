@@ -4,7 +4,7 @@
       %h3.main__header--left--name
         = @group.name
       %ul.main__header--left--member
-        = @group.group_users.each do |group_user|
+        - @group.group_users.each do |group_user|
           = group_user.user.name
     .main__header--right
       = link_to edit_group_path(@group) do 
