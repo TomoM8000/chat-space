@@ -53,10 +53,14 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('form')[0].reset();      
+      $('.main__contents').append(html);
+      $('.main__contents').animate({ scrollTop: $('.main__contents')[0].scrollHeight});
+      $('.new_message')[0].reset();
+      $('.main__footer--form__submit').attr('disabled',false);
     })
-
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    });
+    
   });
 });
