@@ -126,31 +126,24 @@
     background-color: #d2d2d2;
     &--form{
       display: flex;
-      &--input{
-        position: relative;
+      &--text{
+        height: 50px;
         width: 100%;
-        &--text{
-          height: 50px;
-          width: 100%;
-          padding: 0 40px 0 10px;
-          color: #434a54;
-          border-style: none;
-          background-color: #ffffff;
-          line-height: 45px;
+        padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+        background-color: #ffffff;
+        line-height: 45px;
         }
-        &__mask{
-          &__image{
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          cursor: pointer;
-          }
+        &__image{
+        position: absolute;
+        line-height: 50px;
+        right: 180px;
+        cursor: pointer;
         }
-        .hidden{
-            display: none;
-          }
-      }
+        &--icon{
+            font-size: 1.3rem;
+        }
       &__submit{
         width: 100px;
         height: 50px;
@@ -159,10 +152,12 @@
         background-color: #38aef0;
         color: white;
         cursor: pointer;
-/*        line-height: 45px;*/
+        line-height: 45px;
       }
     } 
   }
 }
-
+.hidden{
+  display: none;
+}
 
