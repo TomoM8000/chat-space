@@ -83,9 +83,6 @@ $(function(){
         $('.main__contents').animate({ scrollTop: $('.main__contents')[0].scrollHeight});
       }
     })
-        .fail(function() {
-          console.log('error');
-        });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
