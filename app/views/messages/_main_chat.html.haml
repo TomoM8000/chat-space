@@ -13,12 +13,10 @@
   .main__contents
     = render @messages
   .main__footer
-    .main__footer--form
-      .main__footer--form--input
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'main__footer--form--input--text', placeholder: 'type message'
-          .main__footer--form--input__mask
-            = f.label :image, class: 'main__footer--form--input__mask__image' do
-              = icon('fas', 'image', class: 'icon')
-              = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'main__footer--form__submit'
+    =form_for [@group, @message] do |f|
+      .main__footer--form
+        = f.text_field :content, class: 'main__footer--form--text', placeholder: 'type message'
+        = f.label :image, class: 'main__footer--form__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'main__footer--form__submit'
